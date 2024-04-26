@@ -15,7 +15,6 @@ public class XMLParser {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SaxHandler handler = new SaxHandler(keys);
         SAXParser parser = null;
-     //   System.out.println("in xml parser");
 
 
         try {
@@ -29,7 +28,6 @@ public class XMLParser {
 
         try {
             parser.parse(file, handler);
-         //   System.out.println("parsed");
         } catch (SAXException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -37,10 +35,6 @@ public class XMLParser {
         }
 
         return handler.getResult();
-//        for (Map.Entry<String, String> entry :  handler.getResult().entrySet()) {
-//            System.out.println("---->"+ entry.getKey() + entry.getValue()+ "<----");
-//        }
-
 
     }
 }
